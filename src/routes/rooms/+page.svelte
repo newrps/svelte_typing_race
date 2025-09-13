@@ -77,13 +77,31 @@
 </div>
 
 <style>
+  .room {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 세로 중앙 정렬 */
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  gap: 10px; /* 왼쪽과 오른쪽 요소 간 간격 추가 */
+}
+
+.room .left {
+  flex-grow: 1; /* 남은 공간을 모두 차지하도록 */
+  min-width: 0; /* flexbox에서 콘텐츠가 넘칠 때를 대비하여 최소 너비 설정 */
+}
+
+.room .right {
+  flex-shrink: 0; /* 공간이 부족해도 줄어들지 않도록 */
+}
   .wrap { max-width: 900px; margin: 32px auto; padding: 0 16px; font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
   h1 { font-size: 24px; margin-bottom: 16px; }
   h2 { font-size: 18px; margin: 16px 0 8px; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
   .input { width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; }
   .actions { display:flex; gap:8px; margin: 8px 0 16px; }
-  .btn { padding: 10px 14px; border-radius: 8px; background:#111827; color:#fff; border:none; cursor:pointer; text-decoration:none; }
+  .btn { padding: 10px 14px; border-radius: 8px; background:#111827; color:#fff; border:none; cursor:pointer; text-decoration:none;}
   .btn:hover { background:#0b1220; }
   .btn.ghost { background:#f3f4f6; color:#111827; }
   .rooms { list-style:none; padding:0; margin:12px 0 0; display:flex; flex-direction:column; gap:10px; }
